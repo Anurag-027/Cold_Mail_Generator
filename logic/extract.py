@@ -31,7 +31,7 @@ def extract_job_details(url):
         """
     )
     
-    llm = ChatGroq(temperature=0, api_key="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", model_name="llama-3.1-8b-instant")
+    llm = ChatGroq(temperature=0, api_key="{API_KEY}", model_name="llama-3.1-8b-instant")
     chain_extract = prompt_extract | llm
     res = chain_extract.invoke(input={'page_data': page_data})
     
