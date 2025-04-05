@@ -22,7 +22,7 @@ def generate_email(job_details, portfolio_links):
         """
     )
     
-    llm = ChatGroq(temperature=0, api_key="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", model_name="llama-3.1-8b-instant")
+    llm = ChatGroq(temperature=0, api_key= {API_KEY}, model_name="llama-3.1-8b-instant")
     chain_email = prompt_email | llm
     
     return chain_email.invoke({"job_description": str(job_details), "link_list": portfolio_links}).content
